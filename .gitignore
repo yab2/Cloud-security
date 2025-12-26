@@ -1,6 +1,8 @@
 .env
 .claude
 *.claude
+claude
+progress.md
 *.pem
 *.key
 credentials.conf
