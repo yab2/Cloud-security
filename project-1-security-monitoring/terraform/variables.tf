@@ -35,3 +35,13 @@ variable "instance_type" {
   type        = string
   default     = "t2.micro"
 }
+
+variable "alert_email" {
+  description = "Email address to receive security alerts from CloudWatch Alarms"
+  type        = string
+
+  validation {
+    condition     = can(regex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", var.alert_email))
+    error_message = "The alert_email must be a valid email address."
+  }
+}
